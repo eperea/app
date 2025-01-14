@@ -3,30 +3,30 @@ version: '3.8'
 services:
   db:
     image: mysql:8.0
-    container_name: gdplus-db  # Asegúrate de que este nombre sea único
     environment:
-      MYSQL_ROOT_PASSWORD: tpa20190387
-      MYSQL_DATABASE: djlkaosw_gdplus
-      MYSQL_USER: djlkaosw_eperea
-      MYSQL_PASSWORD: tpa20190387
+      MYSQL_ROOT_PASSWORD: "tpa20190387"       # Cambia 'root_password' por tu contraseña deseada para el usuario root
+      MYSQL_DATABASE: "djlkaosw_gdplus"          # Nombre de la base de datos
+      MYSQL_USER: "djlkaosw_eperea"                         # Nombre de usuario para la base de datos
+      MYSQL_PASSWORD: "tpa20190387"            # Contraseña para el usuario de la base de datos
     volumes:
       - gdplus-db-data:/var/lib/mysql
     ports:
-      - "3306:3306"  # El puerto 3306 se usa para MySQL; si es necesario, cámbialo
+      - "3307:3306"                              # Cambié el puerto del host a 3307 para evitar conflictos
     networks:
       - gdplus-net
+    container_name: "gdplus-db"                  # Cambié el nombre del contenedor para evitar conflictos con otros servicios
 
   php-apache:
     image: php:8.1-apache
-    container_name: gdplus-php-apache  # Asegúrate de que este nombre sea único
     volumes:
       - ./src:/var/www/html
     ports:
-      - "8080:80"  # Cambia el puerto del host si ya está en uso (puedes usar 8080, por ejemplo)
+      - "8081:80"                               # Cambié el puerto del host a 8081 para evitar conflictos
     networks:
       - gdplus-net
     depends_on:
       - db
+    container_name: "gdplus-php-apache"         # Cambié el nombre del contenedor para evitar conflictos con otros servicios
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/html
 
