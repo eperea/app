@@ -1,53 +1,38 @@
-version: '3.8'
-
 services:
-  web:
+  php-apache:
     image: php:8.1-apache
-    build: .
+    container_name: gdplus_php_apache
     ports:
-      - "80:80"  # Exponer puerto 80 para la aplicación
-    environment:
-      MYSQL_HOST: db  # Nombre del contenedor de base de datos
-      MYSQL_USER: djlkaosw_eperea  # Usuario de la base de datos
-      MYSQL_PASSWORD: tpa20190387  # Contraseña para el usuario root
-      MYSQL_DB: djlkaosw_gdplus  # Base de datos que se creará para GDPlus
+      - "80:80"
     volumes:
-      - ./src:/var/www/html  # Mapea el código fuente de la aplicación
+      - ./src:/var/www/html
+    environment:
+      - MYSQL_HOST=prueba_gdplus_db
+      - MYSQL_DATABASE=djlkaosw_gdplus
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=""
     depends_on:
-      - db  # Dependencia de la base de datos
+      - db
     networks:
-      - app_network  # Red personalizada para los contenedores
-    restart: always  # Reiniciar siempre el contenedor si se detiene
+      - gdplus_network
 
   db:
     image: mysql:5.7
+    container_name: gdplus_db
     environment:
-      MYSQL_ROOT_PASSWORD: tpa20190387  # Contraseña para el usuario root
-      MYSQL_DATABASE: djlkaosw_gdplus  # Base de datos GDPlus
+      - MYSQL_ROOT_PASSWORD=""
+      - MYSQL_DATABASE=djlkaosw_gdplus
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=""
     volumes:
-      - db_data:/var/lib/mysql  # Volumen persistente para los datos
-    expose:
-      - "3306"  # Exponer el puerto de MySQL a la red interna
+      - gdplus_db_data:/var/lib/mysql
     networks:
-      - app_network  # Conectar a la misma red del contenedor web
-    restart: always  # Reiniciar el contenedor de la base de datos si se detiene
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      PMA_HOST: db  # Conectar a la base de datos MySQL
-      PMA_USER: djlkaosw_eperea  # Usuario para acceder a phpMyAdmin
-      PMA_PASSWORD: tpa20190387  # Contraseña de phpMyAdmin
-    ports:
-      - "8080:80"  # Exponer phpMyAdmin en el puerto 8080
-    depends_on:
-      - db  # Espera que la base de datos esté lista
-    networks:
-      - app_network  # Red personalizada para los contenedores
-
-volumes:
-  db_data:  # Volumen para almacenar los datos de la base de datos MySQL
+      - gdplus_network
 
 networks:
-  app_network:
-    driver: bridge  # Red puente para la comunicación interna entre contenedores
+  gdplus_network:
+    driver: bridge
+
+volumes:
+  gdplus_db_data:
+    driver: local
