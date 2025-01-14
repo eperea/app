@@ -1,0 +1,31 @@
+[25-Dec-2020 23:18:52 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home3/gdpluste/public_html/gdplus/extensiones/pdf/config.inc.php on line 15
+[25-Dec-2020 23:18:52 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home3/gdpluste/public_html/gdplus/extensiones/pdf/config.inc.php on line 23
+[25-Dec-2020 23:18:52 UTC] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, bool given in /home3/gdpluste/public_html/gdplus/extensiones/pdf/config.inc.php on line 25
+[25-Dec-2020 23:24:19 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'gdpluste_eperea'@'162.241.85.246' (using password: YES) in /home3/gdpluste/public_html/gdplus/extensiones/pdf/config.inc.php on line 15
+[25-Dec-2020 23:24:19 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home3/gdpluste/public_html/gdplus/extensiones/pdf/config.inc.php on line 23
+[25-Dec-2020 23:24:19 UTC] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, bool given in /home3/gdpluste/public_html/gdplus/extensiones/pdf/config.inc.php on line 25
+[09-Jan-2021 14:17:56 UTC] PHP Fatal error:  Uncaught Error: Class 'ControladorPrestamos' not found in /home3/gdpluste/public_html/gestiondocumental/extensiones/pdf/archivo.php:115
+Stack trace:
+#0 {main}
+  thrown in /home3/gdpluste/public_html/gestiondocumental/extensiones/pdf/archivo.php on line 115
+[09-Jan-2021 14:22:31 UTC] PHP Fatal error:  Uncaught Error: Class 'ControladorPrestamos' not found in /home3/gdpluste/public_html/gestiondocumental/extensiones/pdf/archivo.php:112
+Stack trace:
+#0 {main}
+  thrown in /home3/gdpluste/public_html/gestiondocumental/extensiones/pdf/archivo.php on line 112
+[09-Jan-2021 14:23:01 UTC] PHP Fatal error:  Uncaught Error: Class 'ControladorPrestamos' not found in /home3/gdpluste/public_html/gestiondocumental/extensiones/pdf/archivo.php:112
+Stack trace:
+#0 {main}
+  thrown in /home3/gdpluste/public_html/gestiondocumental/extensiones/pdf/archivo.php on line 112
+[09-Jan-2021 14:23:21 UTC] PHP Fatal error:  Uncaught Error: Class 'ControladorPrestamos' not found in /home3/gdpluste/public_html/gestiondocumental/extensiones/pdf/archivo.php:112
+Stack trace:
+#0 {main}
+  thrown in /home3/gdpluste/public_html/gestiondocumental/extensiones/pdf/archivo.php on line 112
+[29-Dec-2021 16:06:34 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'gdpluste_eperea'@'localhost' (using password: YES) in /home2/djlkaosw/public_html/gestiondocumental2/extensiones/pdf/config.inc.php on line 29
+[29-Dec-2021 16:06:34 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home2/djlkaosw/public_html/gestiondocumental2/extensiones/pdf/config.inc.php on line 45
+[29-Dec-2021 16:06:34 UTC] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, bool given in /home2/djlkaosw/public_html/gestiondocumental2/extensiones/pdf/config.inc.php on line 49
+[29-Dec-2021 16:06:39 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'gdpluste_eperea'@'localhost' (using password: YES) in /home2/djlkaosw/public_html/gestiondocumental2/extensiones/pdf/config.inc.php on line 29
+[29-Dec-2021 16:06:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home2/djlkaosw/public_html/gestiondocumental2/extensiones/pdf/config.inc.php on line 45
+[29-Dec-2021 16:06:39 UTC] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, bool given in /home2/djlkaosw/public_html/gestiondocumental2/extensiones/pdf/config.inc.php on line 49
+[29-Dec-2021 16:06:52 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'gdpluste_eperea'@'localhost' (using password: YES) in /home2/djlkaosw/public_html/gestiondocumental2/extensiones/pdf/config.inc.php on line 29
+[29-Dec-2021 16:06:52 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home2/djlkaosw/public_html/gestiondocumental2/extensiones/pdf/config.inc.php on line 45
+[29-Dec-2021 16:06:52 UTC] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, bool given in /home2/djlkaosw/public_html/gestiondocumental2/extensiones/pdf/config.inc.php on line 49

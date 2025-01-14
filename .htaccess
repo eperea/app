@@ -1,0 +1,46 @@
+
+RewriteOptions inherit
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^([-a-zA-Z0-9]+)$ index.php?ruta=$1
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^gesdo\.gdplus\.tech$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.gesdo\.gdplus\.tech$
+RewriteRule ^/?$ "https\:\/\/gesdo\.gdplus\.tech\/" [R=301,L]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^eyzaguirre\.tecsol\.com\.co$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.eyzaguirre\.tecsol\.com\.co$
+RewriteRule ^/?$ "https\:\/\/eyzaguirre\.tecsol\.com\.co\/" [R=301,L]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^eyzaguirre\.gdplus\.co$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.eyzaguirre\.gdplus\.co$
+RewriteRule ^/?$ "https\:\/\/eyzaguirre\.gdplus\.co\/" [R=301,L]
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+#   php_value date.timezone ""America/La_Paz";"
+</IfModule>
+<IfModule lsapi_module>
+#   php_value date.timezone ""America/La_Paz";"
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^demo\.gdplus\.co$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.demo\.gdplus\.co$
+RewriteRule ^/?$ "https\:\/\/demo\.gdplus\.co\/" [R=301,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74___lsphp .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
