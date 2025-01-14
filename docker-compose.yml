@@ -1,38 +1,38 @@
+version: '3.8'
+
 services:
+  db:
+    image: mysql:8.0
+    container_name: gdplus-db  # Asegúrate de que este nombre sea único
+    environment:
+      MYSQL_ROOT_PASSWORD: tpa20190387
+      MYSQL_DATABASE: djlkaosw_gdplus
+      MYSQL_USER: djlkaosw_eperea
+      MYSQL_PASSWORD: tpa20190387
+    volumes:
+      - gdplus-db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"  # El puerto 3306 se usa para MySQL; si es necesario, cámbialo
+    networks:
+      - gdplus-net
+
   php-apache:
     image: php:8.1-apache
-    container_name: gdplus_php_apache
-    ports:
-      - "80:80"
+    container_name: gdplus-php-apache  # Asegúrate de que este nombre sea único
     volumes:
       - ./src:/var/www/html
-    environment:
-      - MYSQL_HOST=prueba_gdplus_db
-      - MYSQL_DATABASE=djlkaosw_gdplus
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=""
+    ports:
+      - "8080:80"  # Cambia el puerto del host si ya está en uso (puedes usar 8080, por ejemplo)
+    networks:
+      - gdplus-net
     depends_on:
       - db
-    networks:
-      - gdplus_network
-
-  db:
-    image: mysql:5.7
-    container_name: gdplus_db
     environment:
-      - MYSQL_ROOT_PASSWORD=""
-      - MYSQL_DATABASE=djlkaosw_gdplus
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=""
-    volumes:
-      - gdplus_db_data:/var/lib/mysql
-    networks:
-      - gdplus_network
+      - APACHE_DOCUMENT_ROOT=/var/www/html
 
 networks:
-  gdplus_network:
+  gdplus-net:
     driver: bridge
 
 volumes:
-  gdplus_db_data:
-    driver: local
+  gdplus-db-data:
