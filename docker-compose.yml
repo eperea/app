@@ -9,7 +9,7 @@ services:
     volumes:
       - gdplus-db-data:/var/lib/mysql
     ports:
-      - "3307:3306"  # Cambia este puerto si está en uso
+      - "3309:3306"  # Cambia este puerto si está en uso
     networks:
       - gdplus-net
 
@@ -18,7 +18,7 @@ services:
     volumes:
       - ./src:/var/www/html
     ports:
-      - "8081:80"  # Cambia este puerto si está en uso
+      - "8088:80"  # Cambia este puerto si está en uso
     networks:
       - gdplus-net
     depends_on:
